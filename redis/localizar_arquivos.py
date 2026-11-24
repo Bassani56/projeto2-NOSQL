@@ -1,6 +1,7 @@
+import os
 from pathlib import Path
 
-PASTA_TPCH = Path(r"C:\Users\User\Desktop\TPC-H")
+PASTA_TPCH = Path(os.environ.get("TPCH_DIR", os.path.expanduser("~/Documentos/tpch-sf1")))
 
 def localizar_arquivo(nome):
     arquivos = list(PASTA_TPCH.rglob(nome))

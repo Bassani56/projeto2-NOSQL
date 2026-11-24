@@ -1,10 +1,11 @@
+import os
 
 from cassandra.cluster import Cluster
 from cassandra.concurrent import execute_concurrent_with_args
 from decimal import Decimal
 from datetime import date
 
-ARQUIVO = r"C:\Users\User\Desktop\TPC-H\7C3325E0-B869-4712-A2FF-D89F23465D20-TPC-H-Tool\TPC-H V3.0.1\dbgen\partsupp.tbl"
+ARQUIVO = os.path.join(os.environ.get("TPCH_DIR", os.path.expanduser("~/Documentos/tpch-sf1")), "partsupp.tbl")
 
 TAMANHO_LOTE = 10000
 CONCORRENCIA = 100

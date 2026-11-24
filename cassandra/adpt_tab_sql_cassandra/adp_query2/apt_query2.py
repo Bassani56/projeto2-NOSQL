@@ -1,14 +1,15 @@
+import os
 from cassandra.cluster import Cluster
 from cassandra.concurrent import execute_concurrent_with_args
 from decimal import Decimal
 
-PASTA = r"C:\Users\User\Desktop\TPC-H\7C3325E0-B869-4712-A2FF-D89F23465D20-TPC-H-Tool\TPC-H V3.0.1\dbgen"
+PASTA = os.environ.get("TPCH_DIR", os.path.expanduser("~/Documentos/tpch-sf1"))
 
-ARQUIVO_PART = PASTA + r"\part.tbl"
-ARQUIVO_SUPPLIER = PASTA + r"\supplier.tbl"
-ARQUIVO_NATION = PASTA + r"\nation.tbl"
-ARQUIVO_REGION = PASTA + r"\region.tbl"
-ARQUIVO_PARTSUPP = PASTA + r"\partsupp.tbl"
+ARQUIVO_PART = PASTA + "/part.tbl"
+ARQUIVO_SUPPLIER = PASTA + "/supplier.tbl"
+ARQUIVO_NATION = PASTA + "/nation.tbl"
+ARQUIVO_REGION = PASTA + "/region.tbl"
+ARQUIVO_PARTSUPP = PASTA + "/partsupp.tbl"
 
 TAMANHO_LOTE = 10000
 CONCORRENCIA = 100

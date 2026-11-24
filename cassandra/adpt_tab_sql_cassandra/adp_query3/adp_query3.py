@@ -1,14 +1,15 @@
+import os
 
 from cassandra.cluster import Cluster
 from cassandra.concurrent import execute_concurrent_with_args
 from datetime import date
 from decimal import Decimal
 
-PASTA = r"C:\Users\User\Desktop\TPC-H\7C3325E0-B869-4712-A2FF-D89F23465D20-TPC-H-Tool\TPC-H V3.0.1\dbgen"
+PASTA = os.environ.get("TPCH_DIR", os.path.expanduser("~/Documentos/tpch-sf1"))
 
-ARQUIVO_CUSTOMER = PASTA + r"\customer.tbl"
-ARQUIVO_ORDERS = PASTA + r"\orders.tbl"
-ARQUIVO_LINEITEM = PASTA + r"\lineitem.tbl"
+ARQUIVO_CUSTOMER = PASTA + "/customer.tbl"
+ARQUIVO_ORDERS = PASTA + "/orders.tbl"
+ARQUIVO_LINEITEM = PASTA + "/lineitem.tbl"
 
 DATA_CORTE = date(1995, 3, 15)
 

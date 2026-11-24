@@ -1,6 +1,7 @@
+import os
 from collections import Counter
 
-arquivo = r"C:\Users\User\Desktop\TPC-H\7C3325E0-B869-4712-A2FF-D89F23465D20-TPC-H-Tool\TPC-H V3.0.1\dbgen\part.tbl"
+arquivo = os.path.join(os.environ.get("TPCH_DIR", os.path.expanduser("~/Documentos/tpch-sf1")), "part.tbl")
 
 tipos = Counter()
 

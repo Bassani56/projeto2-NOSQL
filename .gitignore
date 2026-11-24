@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Dados do TPC-H (gerados pelo dbgen, ficam fora do projeto)
+*.tbl
+*.tbl.gz
+
+# Logs
+*.log
+
+# Editores e sistema
+.vscode/
+.idea/
+.kiro/
+*.swp
+.DS_Store

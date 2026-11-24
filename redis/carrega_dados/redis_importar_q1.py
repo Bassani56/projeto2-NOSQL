@@ -1,3 +1,4 @@
+import os
 
 import redis
 import json
@@ -6,7 +7,7 @@ from pathlib import Path
 from collections import defaultdict
 
 # Configurações
-PASTA_TPCH = Path(r"C:\Users\User\Desktop\TPC-H")
+PASTA_TPCH = Path(os.environ.get("TPCH_DIR", os.path.expanduser("~/Documentos/tpch-sf1")))
 TAMANHO_LOTE = 5000
 
 # Conexão com Redis
